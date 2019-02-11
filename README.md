@@ -1,19 +1,19 @@
-# 前端开发规范
+[1. 规范目的](#1-规范目的)<br>[2. 基本原则](#2-基本原则)<br>[2.1 结构、样式、行为分离 (A)](#21-结构样式行为分离-a)<br>[2.2 缩进 (A)](#22-缩进-a)<br>[2.3 文件编码 (A)](#23-文件编码-a)<br>[2.4 一律使用小写字母 (A)](#24-一律使用小写字母-a)<br>[2.5 省略外链资源 URL 协议部分 (A)](#25-省略外链资源-url-协议部分-a)<br>[3. HTML](#3-html)<br>[3.1 通用约定](#31-通用约定)<br>[3.1.1 标签 (B)](#311-标签-b)<br>[3.1.2 Class 与 ID (A)](#312-class-与-id-a)<br>[3.1.3 属性顺序 (A)](#313-属性顺序-a)<br>[3.1.4 引号 (A)](#314-引号-a)<br>[3.1.5 嵌套 (A)](#315-嵌套-a)<br>[3.1.6 布尔值属性 (A)](#316-布尔值属性-a)<br>[3.2 语义化 (B)](#32-语义化-b)<br>[3.2.1 常见标签语义](#321-常见标签语义)<br>[3.2.2 示例](#322-示例)<br>[3.3 HEAD](#33-head)<br>[3.3.1 文档类型 (A)](#331-文档类型-a)<br>[3.3.2 语言属性 (C)](#332-语言属性-c)<br>[3.3.3 字符编码  (A)](#333-字符编码--a)<br>[3.3.4 IE 兼容模式 (A)](#334-ie-兼容模式-a)<br>[3.3.5 SEO 优化 (C)](#335-seo-优化-c)<br>[3.3.6 viewport (C)](#336-viewport-c)<br>[3.3.7 iOS 图标 (B)](#337-ios-图标-b)<br>[3.3.8 favicon (A)](#338-favicon-a)<br>[3.3.9 HEAD 模板 (B)](#339-head-模板-b)<br>[4.CSS](#4css)<br>[4.1 通用约定](#41-通用约定)<br>[4.1.1 样式表文件命名 (B)](#411-样式表文件命名-b)<br>[4.1.2 代码组织 Class 和 ID (B)](#412-代码组织-class-和-id-b)<br>[4.1.3 Class 和 ID (C)](#413-class-和-id-c)<br>[4.1.4 声明块格式 (A)](#414-声明块格式-a)<br>[4.1.5 声明顺序 (B)](#415-声明顺序-b)<br>[4.1.6 引号使用 (B)](#416-引号使用-b)<br>[4.1.7 媒体查询（Media query）的位置 (C)](#417-媒体查询media-query的位置-c)<br>[4.1.8 不要使用 @import (C)](#418-不要使用-import-c)<br>[4.1.9 链接的样式顺序 (C)](#419-链接的样式顺序-c)<br>[4.1.10 字体规则 (A)](#4110-字体规则-a)<br>[4.2 LESS](#42-less)<br>[4.2.1 代码组织 (B)](#421-代码组织-b)<br>[4.2.2 @import 语句](#422-import-语句)<br>[4.2.3 混入（Mixin）(B)](#423-混入mixinb)<br>[4.2.4 避免嵌套层级过多 (C)](#424-避免嵌套层级过多-c)<br>[4.2.5 字符串插值](#425-字符串插值)<br>[4.3 性能优化](#43-性能优化)<br>[4.3.1 慎重选择高消耗的样式 (C)](#431-慎重选择高消耗的样式-c)<br>[4.3.2 避免过分重排 (C)](#432-避免过分重排-c)<br>[4.3.3 正确使用 Display 的属性 (C)](#433-正确使用-display-的属性-c)<br>[4.3.4 不滥用 float (C)](#434-不滥用-float-c)<br>[4.3.5 动画性能优化 (C)](#435-动画性能优化-c)<br>[4.3.6 多利用硬件能力，如通过 3D 变形开启 GPU 加速 (C)](#436-多利用硬件能力如通过-3d-变形开启-gpu-加速-c)<br>[4.3.7 提升 CSS 选择器性能](#437-提升-css-选择器性能)<br>[5.JavaScript](#5javascript)<br>[5.1通用约定](#51通用约定)<br>[5.1.1 注释 (B)](#511-注释-b)<br>[5.1.2 命名 (B)](#512-命名-b)<br>[5.1.3 命名语法 (B)](#513-命名语法-b)<br>[5.1.4 接口命名规范 (B)](#514-接口命名规范-b)<br>[5.1.5 True 和 False 布尔表达式  (B)](#515-true-和-false-布尔表达式--b)<br>[5.1.6 不要在 Array 上使用 for-in 循环](#516-不要在-array-上使用-for-in-循环)<br>[5.1.7 二元和三元操作符 (A)](#517-二元和三元操作符-a)<br>[5.1.8 条件(三元)操作符 (?:) (B)](#518-条件三元操作符--b)<br>[5.1.9 && 和 || (B)](#519--和--b)<br>[5.2 jQuery 规范](#52-jquery-规范)<br>[5.2.1 使用最新版本的 jQuery (C)](#521-使用最新版本的-jquery-c)<br>[5.2.2 jQuery 变量 (A)](#522-jquery-变量-a)<br>[5.2.3	选择器 (B)](#523-选择器-b)<br>[5.2.4	DOM 操作](#524-dom-操作)<br>[5.2.5 事件 (B)](#525-事件-b)<br>[5.2.6 链式写法 (B)](#526-链式写法-b)<br>[5.2.7 其他 (C)](#527-其他-c)<br>[5.2.8 jQuery 插件模板 (C)](#528-jquery-插件模板-c)<br>[5.3 性能优化](#53-性能优化)<br>[5.3.1 避免不必要的 DOM 操作 (B)](#531-避免不必要的-dom-操作-b)<br>[5.3.2 缓存数组长度  (C)](#532-缓存数组长度--c)<br>[5.3.3 异步加载第三方内容  (A)](#533-异步加载第三方内容--a)
 
-## 1、规范目的
+## 1. 规范目的
 为了提高工作效率，便于后台人员添加功能及前端后期优化维护，输出高质量的文档，在平台建设中，使结构更加清晰，代码简明有序，有一个更好的前端架构。<br>
 规范基本准则：符合web标准，使用具有语义的标签，使结构、表现、行为分离，兼容性优良。页面性能优化，代码简洁、明了、有序，尽可能的减少服务器的负载，保证最快的解析速度。
 
-## 2、基本原则
-### 2.1 结构、样式、行为分离 <span style="color: brown; font-weight: bold">A</span>
+## 2. 基本原则
+### 2.1 结构、样式、行为分离 (A)
 确保文档和模板只包含 HTML 结构，样式都放到样式表里，行为都放到脚本里。
-### 2.2 缩进 <span style="color: brown; font-weight: bold">A</span>
+### 2.2 缩进 (A)
 统一两个空格缩进（总之缩进统一即可），不要使用 Tab 或者 Tab、空格混搭（使用统一的代码编辑器并设置相同的编辑配置也可）。
-### 2.3 文件编码 <span style="color: brown; font-weight: bold">A</span>
+### 2.3 文件编码 (A)
 使用不带 BOM 的 UTF-8 编码。
 - 在 HTML中指定编码 <meta charset="utf-8"> ；
 -	无需使用 @charset 指定样式表的编码，它默认为 UTF-8 （参考 @charset）；
-### 2.4 一律使用小写字母 <span style="color: brown; font-weight: bold">A</span>
+### 2.4 一律使用小写字母 (A)
 
 ``` html
 <!-- Recommended -->
@@ -31,7 +31,7 @@ color: #e5e5e5;
 color: #E5E5E5;
 ```
 
-### 2.5 省略外链资源 URL 协议部分 <span style="color: brown; font-weight: bold">A</span>
+### 2.5 省略外链资源 URL 协议部分 (A)
 省略外链资源（图片及其它媒体资源）URL 中的 http / https 协议，使 URL 成为相对地址，避免Mixed Content 问题，减小文件字节数。
 其它协议（ftp 等）的 URL 不省略。
 
@@ -55,10 +55,10 @@ color: #E5E5E5;
 }
 ```
 
-## 3.HTML
+## 3. HTML
 尽量遵循 HTML 标准和语义，但是不要以牺牲实用性为代价。任何时候都要尽量使用最少的标签并保持最小的复杂度。
-### 3.1通用约定
-#### 3.1.1标签 <span style="color: yellow; font-weight: bold">B</span>
+### 3.1 通用约定
+#### 3.1.1 标签 (B)
 -	自闭合（self-closing）标签，无需闭合 ( 例如： `<img>` `<input>` `<br>` `<hr>` 等 )
 -	可选的闭合标签（closing tag），需闭合 ( 例如：`</li>` 或 `</body>` )
 -	尽量减少标签数量
@@ -85,7 +85,7 @@ color: #E5E5E5;
 <img class="avatar" src="...">
 ```
 
-#### 3.1.2	Class 与 ID <span style="color: brown; font-weight: bold">A</span>
+#### 3.1.2 Class 与 ID (A)
 - class 应以功能或内容命名，不以表现形式命名
 - class 与 id 单词字母小写，多个单词组成时，采用中划线-分隔
 - 使用唯一的 id 作为 Javascript hook, 同时避免创建无样式信息的 class
@@ -98,7 +98,7 @@ color: #E5E5E5;
 <div id="j-hook" class="sidebar content-wrapper"></div>
 ```
 
-#### 3.1.3 属性顺序 <span style="color: brown; font-weight: bold">A</span>
+#### 3.1.3 属性顺序 (A)
 HTML 属性应该按照特定的顺序出现以保证易读性。<br>
 id > class > name >	data-xxx > src, for, type, href >	title > alt > aria-xxx > role
 ``` html
@@ -108,7 +108,7 @@ id > class > name >	data-xxx > src, for, type, href >	title > alt > aria-xxx > r
 
 <img src="..." alt="...">
 ```
-#### 3.1.4	引号 <span style="color: brown; font-weight: bold">A</span>
+#### 3.1.4 引号 (A)
 属性的定义，统一使用双引号。
 ``` html
 <!-- Not recommended -->
@@ -118,7 +118,7 @@ id > class > name >	data-xxx > src, for, type, href >	title > alt > aria-xxx > r
 <span id="j-hook" class="text">Google</span>
 ```
 
-#### 3.1.5	嵌套 <span style="color: brown; font-weight: bold">A</span>
+#### 3.1.5 嵌套 (A)
 a 不允许嵌套 div 这种约束属于语义嵌套约束，与之区别的约束还有严格嵌套约束，比如a 不允许嵌套 a。
 严格嵌套约束在所有的浏览器下都不被允许；而语义嵌套约束，浏览器大多会容错处理，生成的文档树可能相互不太一样。
 语义嵌套约束
@@ -130,7 +130,7 @@ a 不允许嵌套 div 这种约束属于语义嵌套约束，与之区别的约�
 -	`<a>`里不可以嵌套交互式元素`<a>、<button>、<select>`等;
 -	`<p>`里不可以嵌套块级元素`<div>、<h1>~<h6>、<p>、<ul>/<ol>/<li>、<dl>/<dt>/<dd>、<form>`等。
 更多详情，参考WEB标准系列-HTML元素嵌套
-#### 3.1.6 布尔值属性 <span style="color: brown; font-weight: bold">A</span>
+#### 3.1.6 布尔值属性 (A)
 HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 ``` html
 <input type="text" disabled>
@@ -141,7 +141,8 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
   <option value="1" selected>1</option>
 </select>
 ```
-### 3.2 语义化 <span style="color: yellow; font-weight: bold">B</span>
+
+### 3.2 语义化 (B)
 没有 CSS 的 HTML 是一个语义系统而不是 UI 系统。<br>
 通常情况下，每个标签都是有语义的。<br>
 此外语义化的 HTML 结构，有助于机器（搜索引擎）理解，另一方面多人协作时，能迅速了解开发者意图。<br>
@@ -164,13 +165,13 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 -	章节的段落: `<p>`
 
 ### 3.3 HEAD
-#### 3.3.1	文档类型 <span style="color: brown; font-weight: bold">A</span>
+#### 3.3.1 文档类型 (A)
 为每个 HTML 页面的第一行添加标准模式（standard mode）的声明， 这样能够确保在每个浏览器中拥有一致的表现。
 ``` html
 <!DOCTYPE html>
 ```
 
-#### 3.3.2	语言属性  <span style="color: green; font-weight: bold">C</span>
+#### 3.3.2 语言属性 (C)
 为什么使用 lang="zh-cmn-Hans" 而不是我们通常写的 lang="zh-CN" 呢? 请参考知乎上的讨论: 网页头部的声明应该是用 lang="zh" 还是 lang="zh-cn"？
 ``` html
 <!-- 中文（直接用这个就好了） --> 
@@ -186,7 +187,7 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 <html lang="en">
 ```
 
-#### 3.3.3 字符编码  <span style="color: brown; font-weight: bold">A</span>
+#### 3.3.3 字符编码  (A)
 - 以无 BOM 的 utf-8 编码作为文件格式
 -	指定字符编码的 meta 必须是 head 的第一个直接子元素
 ``` html
@@ -201,13 +202,13 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 </html>
 ```
 
-#### 3.3.4	IE 兼容模式 <span style="color: brown; font-weight: bold">A</span>
+#### 3.3.4 IE 兼容模式 (A)
 优先使用最新版本的IE 和 Chrome 内核
 ``` html
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 ```
 
-#### 3.3.5 SEO 优化 <span style="color: green; font-weight: bold">C</span>
+#### 3.3.5 SEO 优化 (C)
 ``` html
 <head>
     <meta charset="utf-8">
@@ -220,7 +221,7 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 </head>
 ```
 
-#### 3.3.6	viewport <span style="color: green; font-weight: bold">C</span>
+#### 3.3.6 viewport (C)
 -	viewport: 一般指的是浏览器窗口内容区的大小，不包含工具条、选项卡等内容
 -	width: 浏览器宽度，输出设备中的页面可见区域宽度
 -	device-width: 设备分辨率宽度，输出设备的屏幕可见宽度
@@ -231,7 +232,7 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 ``` html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
-#### 3.3.7 iOS 图标 <span style="color: yellow; font-weight: bold">B</span>
+#### 3.3.7 iOS 图标 (B)
 -	apple-touch-icon 图片自动处理成圆角和高光等效果
 -	apple-touch-icon-precomposed 禁止系统自动添加效果，直接显示设计原图
 ``` html
@@ -247,7 +248,7 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 <!-- Retina iPad，144x144 像素，可以没有，但推荐有 -->
 <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144x144-precomposed.png" sizes="144x144">
 ```
-#### 3.3.8 favicon <span style="color: brown; font-weight: bold">A</span>
+#### 3.3.8 favicon (A)
 在未指定 favicon 时，大多数浏览器会请求 Web Server 根目录下的 favicon.ico 。为了保证 favicon 可访问，避免404，必须遵循以下两种方法之一：
 -	在 Web Server 根目录放置 favicon.ico 文件
 -	使用 link 指定 favicon
@@ -255,7 +256,7 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 <link rel="shortcut icon" href="path/to/favicon.ico">
 ```
 
-#### 3.3.9 HEAD 模板 <span style="color: yellow; font-weight: bold">B</span>
+#### 3.3.9 HEAD 模板 (B)
 ``` html
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
@@ -279,7 +280,7 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 ```
 ## 4.CSS
 ### 4.1 通用约定
-#### 4.1.1 样式表文件命名 <span style="color: yellow; font-weight: bold">B</span>
+#### 4.1.1 样式表文件命名 (B)
 - 主要的 master.css
 - 模块 module.css
 - 基本共用 base.css
@@ -291,14 +292,14 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 - 补丁 mend.css
 - 打印 print.css
 
-#### 4.1.2 代码组织 Class 和 ID <span style="color: yellow; font-weight: bold">B</span>
+#### 4.1.2 代码组织 Class 和 ID (B)
 - 以组件为单位组织代码段
 - 制定一致的注释规范
 - 组件块和子组件块以及声明块之间使用一空行分隔，子组件块之间三空行分隔
 - 如果使用了多个 CSS 文件，将其按照组件而非页面的形式分拆，因为页面会被重组，而组件只会被移动<br>
 
-良好的注释是非常重要的。请留出时间来描述组件（component）的工作方式、局限性和构建它们的方法。不要让你的团队其它成员 来猜测一段不通用或不明显的代码的目的。
-##### 提示：通过配置编辑器，可以提供快捷键来输出一致认可的注释模式。
+良好的注释是非常重要的。请留出时间来描述组件（component）的工作方式、局限性和构建它们的方法。不要让你的团队其它成员 来猜测一段不通用或不明显的代码的目的。<br>
+**提示：通过配置编辑器，可以提供快捷键来输出一致认可的注释模式。**
 ``` css
 /* ==========================================================================
    组件块
@@ -324,7 +325,7 @@ HTML5 规范中 disabled、checked、selected 等属性不用设置值。
 }
 ```
 
-#### 4.1.3	Class 和 ID <span style="color: green; font-weight: bold">C</span>
+#### 4.1.3 Class 和 ID (C)
 - 使用语义化、通用的命名方式
 - 使用连字符 - 作为 ID、Class 名称界定符，不要驼峰命名法和下划线
 - 避免选择器嵌套层级过多，尽量少于 3 级
@@ -344,7 +345,7 @@ ul#example {}
 #example {}
 ```
 
-#### 4.1.4	声明块格式 <span style="color: brown; font-weight: bold">A</span>
+#### 4.1.4 声明块格式 (A)
 - 选择器分组时，保持独立的选择器占用一行
 - 声明块的左括号 { 前添加一个空格
 - 声明块的右括号 } 应单独成行
@@ -375,7 +376,7 @@ ul#example {}
 }
 ```
  
-#### 4.1.5	声明顺序 <span style="color: yellow; font-weight: bold">B</span>
+#### 4.1.5 声明顺序 (B)
 相关属性应为一组，推荐的样式编写顺序
 1.	Positioning
 2.	Box model
@@ -421,7 +422,7 @@ ul#example {}
 }
 ```
  
-#### 4.1.6	引号使用 <span style="color: yellow; font-weight: bold">B</span>
+#### 4.1.6 引号使用 (B)
 url() 、属性选择符、属性值使用双引号。 参考 Is quoting the value of url() really necessary?
 ``` css
 /* Not recommended */
@@ -443,7 +444,7 @@ html {
 }
 ```
 
-#### 4.1.7	媒体查询（Media query）的位置 <span style="color: green; font-weight: bold">C</span>
+#### 4.1.7 媒体查询（Media query）的位置 (C)
 将媒体查询放在尽可能相关规则的附近。不要将他们打包放在一个单一样式文件中或者放在文档底部。如果你把他们分开了，将来只会被大家遗忘。
 
 ``` css
@@ -458,7 +459,7 @@ html {
 }
 ```
 
-#### 4.1.8	不要使用 @import <span style="color: green; font-weight: bold">C</span>
+#### 4.1.8 不要使用 @import (C)
 与 <link> 相比，@import 要慢很多，不光增加额外的请求数，还会导致不可预料的问题。
 替代办法：
 - 使用多个 元素
@@ -467,14 +468,14 @@ html {
 
 参考 don’t use @import
 
-#### 4.1.9 链接的样式顺序 <span style="color: green; font-weight: bold">C</span>
+#### 4.1.9 链接的样式顺序 (C)
 a:link -> a:visited -> a:hover -> a:active
 
-#### 4.1.10 字体规则 <span style="color: brown; font-weight: bold">A</span>
+#### 4.1.10 字体规则 (A)
 为了防止文件合并及编码转换时造成问题，建议将样式中文字体名字改成对应的英文名字
  
 ### 4.2 LESS
-#### 4.2.1 代码组织 <span style="color: yellow; font-weight: bold">B</span>
+#### 4.2.1 代码组织 (B)
 代码按以下顺序组织：
 1.	@import
 2.	变量声明
@@ -487,7 +488,7 @@ a:link -> a:visited -> a:hover -> a:active
 
 .page {
   width: 960px;
-  margin: 0 auto;
+  margin: 0 auto1;
 }
 ```
 
@@ -503,7 +504,7 @@ a:link -> a:visited -> a:hover -> a:active
 @import "mixins/grid.less";
 ```
 
-#### 4.2.3	混入（Mixin）<span style="color: yellow; font-weight: bold">B</span>
+#### 4.2.3 混入（Mixin）(B)
 1.	在定义 mixin 时，如果 mixin 名称不是一个需要使用的 className，必须加上括号，否则即使不被调用也会输出到 CSS 中。
 2.	如果混入的是本身不输出内容的 mixin，需要在 mixin 后添加括号（即使不传参数），以区分这是否是一个 className。
 ``` css
@@ -528,7 +529,7 @@ h3 {
 }
 ```
 
-#### 4.2.4	避免嵌套层级过多 <span style="color: green; font-weight: bold">C</span>
+#### 4.2.4 避免嵌套层级过多 (C)
 - 将嵌套深度限制在2级。对于超过3级的嵌套，给予重新评估。这可以避免出现过于详实的CSS选择器。
 - 避免大量的嵌套规则。当可读性受到影响时，将之打断。推荐避免出现多于20行的嵌套规则出现。
 
@@ -540,7 +541,7 @@ background-image: url("@{base-url}/images/bg.png");
 ```
 
 ### 4.3 性能优化
-#### 4.3.1	慎重选择高消耗的样式 <span style="color: green; font-weight: bold">C</span>
+#### 4.3.1 慎重选择高消耗的样式 (C)
 高消耗属性在绘制前需要浏览器进行大量计算：
 - box-shadows
 - border-radius
@@ -548,7 +549,7 @@ background-image: url("@{base-url}/images/bg.png");
 - transforms
 - CSS filters（性能杀手）
 
-#### 4.3.2 避免过分重排 <span style="color: green; font-weight: bold">C</span>
+#### 4.3.2 避免过分重排 (C)
 当发生重排的时候，浏览器需要重新计算布局位置与大小，更多详情。
 常见的重排元素:
 - width
@@ -575,17 +576,17 @@ background-image: url("@{base-url}/images/bg.png");
 - white-space
 - min-height
 
-#### 4.3.3 正确使用 Display 的属性 <span style="color: green; font-weight: bold">C</span>
+#### 4.3.3 正确使用 Display 的属性 (C)
 Display 属性会影响页面的渲染，请合理使用。
 -	display: inline后不应该再使用 width、height、margin、padding 以及 float
 -	display: inline-block 后不应该再使用 float
 -	display: block 后不应该再使用 vertical-align
 -	display: table-* 后不应该再使用 margin 或者 float
 
-#### 4.3.4	不滥用 float <span style="color: green; font-weight: bold">C</span>
+#### 4.3.4 不滥用 float (C)
 float在渲染时计算量比较大，尽量减少使用。
 
-#### 4.3.5	动画性能优化 <span style="color: green; font-weight: bold">C</span>
+#### 4.3.5 动画性能优化 (C)
 动画的实现原理，是利用了人眼的“视觉暂留”现象，在短时间内连续播放数幅静止的画面，使肉眼因视觉残象产生错觉，而误以为画面在“动”。
 动画的基本概念：
 - 帧：在动画过程中，每一幅静止画面即为一“帧”
@@ -597,7 +598,7 @@ float在渲染时计算量比较大，尽量减少使用。
 - 避免通过类似 jQuery animate()-style 改变每帧的样式，使用 CSS 声明动画会得到更好的浏览器优化
 - 使用 translate 取代 absolute 定位就会得到更好的 fps，动画会更顺滑
  
-#### 4.3.6	多利用硬件能力，如通过 3D 变形开启 GPU 加速 <span style="color: green; font-weight: bold">C</span>
+#### 4.3.6 多利用硬件能力，如通过 3D 变形开启 GPU 加速 (C)
 一般在 Chrome 中，3D或透视变换（perspective transform）CSS属性和对 opacity 进行 CSS 动画会创建新的图层，在硬件加速渲染通道的优化下，GPU 完成 3D 变形等操作后，将图层进行复合操作（Compesite Layers），从而避免触发浏览器大面积重绘和重排。
 注：3D 变形会消耗更多的内存和功耗。
 使用 translate3d 右移 500px 的动画流畅度要明显优于直接使用 left：
@@ -617,17 +618,23 @@ float在渲染时计算量比较大，尽量减少使用。
 }
 ```
 
-#### 4.3.7	提升 CSS 选择器性能 
+#### 4.3.7 提升 CSS 选择器性能 
 CSS 选择器对性能的影响源于浏览器匹配选择器和文档元素时所消耗的时间，所以优化选择器的原则是应尽量避免使用消耗更多匹配时间的选择器。而在这之前我们需要了解 CSS 选择器匹配的机制， 如子选择器规则：
-#header > a {font-weight:blod;}
+``` css
+header > a {font-weight:blod;}
+```
+
 我们中的大多数人都是从左到右的阅读习惯，会习惯性的设定浏览器也是从左到右的方式进行匹配规则，推测这条规则的开销并不高。
 我们会假设浏览器以这样的方式工作：寻找 id 为 header 的元素，然后将样式规则应用到直系子元素中的 a 元素上。我们知道文档中只有一个 id 为 header 的元素，并且它只有几个 a 元素的子节点，所以这个 CSS 选择器应该相当高效。
 事实上，却恰恰相反，CSS 选择器是从右到左进行规则匹配。了解这个机制后，例子中看似高效的选择器在实际中的匹配开销是很高的，浏览器必须遍历页面中所有的 a 元素并且确定其父元素的 id 是否为 header 。
 如果把例子的子选择器改为后代选择器则会开销更多，在遍历页面中所有 a 元素后还需向其上级遍历直到根节点。
-#header  a {font-weight:blod;}
+``` css
+header  a {font-weight:blod;}
+```
+
 理解了CSS选择器从右到左匹配的机制后，明白只要当前选择符的左边还有其他选择符，样式系统就会继续向左移动，直到找到和规则匹配的选择符，或者因为不匹配而退出。我们把最右边选择符称之为关键选择器。
 
-1、避免使用通用选择器 <span style="color: yellow; font-weight: bold">B</span>
+1、避免使用通用选择器 (B)
 
 ``` css
 /* Not recommended */
@@ -635,7 +642,7 @@ CSS 选择器对性能的影响源于浏览器匹配选择器和文档元素时�
 ```
 浏览器匹配文档中所有的元素后分别向上逐级匹配 class 为 content 的元素，直到文档的根节点。因此其匹配开销是非常大的，所以应避免使用关键选择器是通配选择器的情况。
 
-2、避免使用标签或 class 选择器限制 id 选择器 <span style="color: yellow; font-weight: bold">B</span>
+2、避免使用标签或 class 选择器限制 id 选择器 (A)
 
 ``` css
 /* Not recommended */
@@ -644,7 +651,7 @@ button #backButton {…}
 #newMenuIcon {…}
 ```
 
-3、避免使用标签限制 class 选择器 <span style="color: yellow; font-weight: bold">B</span>
+3、避免使用标签限制 class 选择器 (B)
 ``` css
 /* Not recommended */
 treecell.indented {…}
@@ -654,7 +661,7 @@ treecell.indented {…}
 .hierarchy-deep {…}
 ```
 
-4、避免使用多层标签选择器。使用 class 选择器替换，减少css查找 <span style="color: yellow; font-weight: bold">B</span>
+4、避免使用多层标签选择器。使用 class 选择器替换，减少css查找 (B)
 ``` css
 /* Not recommended */
 treeitem[mailfolder="true"] > treerow > treecell {…}
@@ -662,7 +669,7 @@ treeitem[mailfolder="true"] > treerow > treecell {…}
 .treecell-mailfolder {…}
 ```
 
-5、避免使用子选择器 <span style="color: green; font-weight: bold">C</span>
+5、避免使用子选择器 (B)
 ``` css
 /* Not recommended */
 treehead treerow treecell {…}
@@ -672,7 +679,7 @@ treehead > treerow > treecell {…}
 .treecell-header {…}
 ```
 
-6、使用继承 <span style="color: yellow; font-weight: bold">B</span>
+6、使用继承 (B)
 ``` css
 /* Not recommended */
 #bookmarkMenuItem > .menu-left { list-style-image: url(blah) }
@@ -682,7 +689,7 @@ treehead > treerow > treecell {…}
 
 ## 5.JavaScript
 ### 5.1通用约定
-#### 5.1.1	注释 <span style="color: yellow; font-weight: bold">B</span>
+#### 5.1.1 注释 (B)
 原则
 - As short as possible（如无必要，勿增注释）：尽量提高代码本身的清晰性、可读性。
 - As long as necessary（如有必要，尽量详尽）：合理的注释、空行排版等，可以让代码更易阅读、更具美感。
@@ -728,7 +735,7 @@ function foo(p1, p2, p3) {
  * Copyright 2009 Meizu Inc. All Rights Reserved.
  */
 ```
-#### 5.1.2	命名 <span style="color: yellow; font-weight: bold">B</span>
+#### 5.1.2 命名 (B)
 变量，使用 Camel 命名法。
 ``` js
 var loadingModules = {};
@@ -738,7 +745,7 @@ var loadingModules = {};
 ``` js
 var _privateMethod = {};
 ```
-##### 注：在Vue中使用下划线可能和Vue内置的属性、API方法冲突，可以用 `p_privateMethod` 代替
+**注：在Vue中使用下划线可能和Vue内置的属性、API方法冲突，可以用 `p_privateMethod` 代替**
 
 常量，使用全部字母大写，单词间下划线分隔的命名方式。
 ``` js
@@ -782,7 +789,7 @@ function insertHTML(element, html) {}
 var httpRequest = new HTTPRequest();
 ```
 
-#### 5.1.3	命名语法 <span style="color: yellow; font-weight: bold">B</span>
+#### 5.1.3 命名语法 (B)
 类名，使用名词。
 ``` js
 function Engine(options) {}
@@ -804,7 +811,7 @@ var loadingData = ajax.get('url');
 loadingData.then(callback);
 ```
 
-#### 5.1.4	接口命名规范 <span style="color: yellow; font-weight: bold">B</span>
+#### 5.1.4 接口命名规范 (B)
 1. 可读性强，见名晓义；
 2. 尽量不与 jQuery 社区已有的习惯冲突；
 3. 尽量写全，不用缩写，除非是下面列表中约定的；（变量以表达清楚为目标，uglify 会完成压缩体积工作）
@@ -837,7 +844,7 @@ theme | 主题
 className | 类名
 classNameSpace | class 命名空间
 
-#### 5.1.5	True 和 False 布尔表达式  <span style="color: yellow; font-weight: bold">B</span>
+#### 5.1.5 True 和 False 布尔表达式  (B)
 类型检测优先使用 typeof。对象类型检测使用 instanceof。null 或 undefined 的检测使用 == null。
 下面的布尔表达式都返回 false:
 - null
@@ -849,7 +856,7 @@ classNameSpace | class 命名空间
 -	[] 空数组
 -	{} 空对象
 
-#### 5.1.6	不要在 Array 上使用 for-in 循环
+#### 5.1.6 不要在 Array 上使用 for-in 循环
 for-in 循环只用于 object/map/hash 的遍历, 对 Array 用 for-in 循环有时会出错. 因为它并不是从 0 到 length - 1 进行遍历, 而是所有出现在对象及其原型链的键值。
 ``` js
 // Not recommended
@@ -884,7 +891,7 @@ function printArray(arr) {
 }
 ```
 
-#### 5.1.7	二元和三元操作符 <span style="color: brown; font-weight: bold">A</span>
+#### 5.1.7 二元和三元操作符 (A)
 操作符始终写在前一行, 以免分号的隐式插入产生预想不到的问题。
 ``` js
 var x = a ? b : c;
@@ -904,7 +911,7 @@ var x = foo.bar().
     doSomethingElse();
 ```
 
-#### 5.1.8	条件(三元)操作符 (?:) <span style="color: yellow; font-weight: bold">B</span>
+#### 5.1.8 条件(三元)操作符 (?:) (B)
 三元操作符用于替代 if 条件判断语句。
 ``` js
 // Not recommended
@@ -918,7 +925,7 @@ if (val != 0) {
 return val ? foo() : bar();
 ``` 
 
-#### 5.1.9	&& 和 || <span style="color: yellow; font-weight: bold">B</span>
+#### 5.1.9 && 和 || (B)
 二元布尔操作符是可短路的, 只有在必要时才会计算到最后一项。
 ``` js
 // Not recommended
@@ -954,13 +961,13 @@ if (kid) {
 
 ### 5.2 jQuery 规范
 
-#### 5.2.1	使用最新版本的 jQuery <span style="color: green; font-weight: bold">C</span>
+#### 5.2.1 使用最新版本的 jQuery (C)
 最新版本的 jQuery 会改进性能和增加新功能，若不是为了兼容旧浏览器，建议使用最新版本的 jQuery。以下是三条常见的 jQuery 语句，版本越新，性能越好：<br>
 $('.elem')<br>
 $('.elem', context)<br>
 context.find('.elem')<br>
 分别使用 1.4.2、1.4.4、1.6.2 三个版本测试浏览器在一秒内能够执行多少次，结果 1.6.2 版执行次数远超两个老版本。
-#### 5.2.2	 jQuery 变量 <span style="color: brown; font-weight: bold">A</span>
+#### 5.2.2 jQuery 变量 (A)
 1.	存放 jQuery 对象的变量以 $ 开头；
 2.	将 jQuery 选择器返回的对象缓存到本地变量中复用；
 3.	使用驼峰命名变量；
@@ -968,7 +975,7 @@ context.find('.elem')<br>
 var $myDiv = $("#myDiv");
 $myDiv.click(function(){...});
 ```
-####  5.2.3	选择器 <span style="color: yellow; font-weight: bold">B</span>
+#### 5.2.3	选择器 (B)
 1.	尽可能的使用 ID 选择器，因为它会调用浏览器原生方法 document.getElementById 查找元素。当然直接使用原生 document.getElementById 方法性能会更好；
 2.	在父元素中选择子元素使用 .find() 方法性能会更好, 因为 ID 选择器没有使用到 Sizzle 选择器引擎来查找元素；
 ``` js
@@ -979,7 +986,7 @@ var $productIds = $("#products .class");
 var $productIds = $("#products").find(".class");
 ```
 
-####  5.2.4	DOM 操作
+#### 5.2.4	DOM 操作
 1.	当要操作 DOM 元素的时候，尽量将其分离节点，操作结束后，再插入节点；
 2.	使用字符串连接或 array.join 要比 .append()性能更好；
 ``` js
@@ -1009,7 +1016,7 @@ for(var i = 0; i < 10000; i++){
 $myList.html(array.join(''));
 ```
 
-#### 5.2.5	事件 <span style="color: yellow; font-weight: bold">B</span>
+#### 5.2.5 事件 (B)
 1.	如果需要，对事件使用自定义的 namespace，这样容易解绑特定的事件，而不会影响到此 DOM 元素的其他事件监听；
 2.	对 Ajax 加载的 DOM 元素绑定事件时尽量使用事件委托。事件委托允许在父元素绑定事件，子代元素可以响应事件，也包括 Ajax 加载后添加的子代元素；
 ``` js
@@ -1023,7 +1030,7 @@ $("#list a").on("click", myClickHandler);
 $("#list").on("click", "a", myClickHandler);
 ```
 
-#### 5.2.6	链式写法 <span style="color: yellow; font-weight: bold">B</span>
+#### 5.2.6 链式写法 (B)
 1.	尽量使用链式写法而不是用变量缓存或者多次调用选择器方法；
 2.	当链式写法超过三次或者因为事件绑定变得复杂后，使用换行和缩进保持代码可读性；
 
@@ -1036,12 +1043,12 @@ $("#myLink")
   .show();
 ```
 
-#### 5.2.7	其他 <span style="color: green; font-weight: bold">C</span>
+#### 5.2.7 其他 (C)
 1.	多个参数使用对象字面量存储；
 2.	不要将 CSS 写在 jQuery 里面；
 3.	正则表达式仅准用 .test() 和 .exec() 。不准用 "string".match() ；
 
-#### 5.2.8	 jQuery 插件模板 <span style="color: green; font-weight: bold">C</span>
+#### 5.2.8 jQuery 插件模板 (C)
 ``` js
 // jQuery Plugin Boilerplate
 // A boilerplate for jumpstarting jQuery plugins development
@@ -1152,8 +1159,8 @@ $("#myLink")
 })(jQuery);
 ```
 
-### 5.3	 性能优化
-#### 5.3.1	 避免不必要的 DOM 操作 <span style="color: yellow; font-weight: bold">B</span>
+### 5.3 性能优化
+#### 5.3.1 避免不必要的 DOM 操作 (B)
 浏览器遍历 DOM 元素的代价是昂贵的。最简单优化 DOM 树查询的方案是，当一个元素出现多次时，将它保存在一个变量中，就避免多次查询 DOM 树了。
 ``` js
 // Recommended
@@ -1172,7 +1179,7 @@ for (var i = 0; i < 100; i++) {
 }
 ```
 
-#### 5.3.2	缓存数组长度  <span style="color: green; font-weight: bold">C</span>
+#### 5.3.2 缓存数组长度  (C)
 循环无疑是和 JavaScript 性能非常相关的一部分。通过存储数组的长度，可以有效避免每次循环重新计算。
 注: 虽然现代浏览器引擎会自动优化这个过程，但是不要忘记还有旧的浏览器。
 ``` js
@@ -1188,7 +1195,7 @@ for (i = 0; i < arr.length; i++) {
 
 }
 ```
-#### 5.3.3	异步加载第三方内容  <span style="color: brown; font-weight: bold">A</span>
+#### 5.3.3 异步加载第三方内容  (A)
 当你无法保证嵌入第三方内容比如 Youtube 视频或者一个 like/tweet 按钮可以正常工作的时候，你需要考虑用异步加载这些代码，避免阻塞整个页面加载。
 ``` js
 (function() {
